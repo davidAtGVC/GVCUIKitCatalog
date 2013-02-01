@@ -1,0 +1,14 @@
+/*
+ * Localization
+ * Copyright 2012 Global Village Consulting Inc. All rights reserved.
+ */
+
+ /** Global Values */
+"Label/Clear" = "Clear";
+"Label/Search" = "Search";
+"Label/Cancel" = "Cancel";
+
+
+ /** UI Values */
+
+/* buttons / labels */

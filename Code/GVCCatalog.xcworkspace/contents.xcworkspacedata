@@ -4,4 +4,10 @@
    <FileRef
       location = "group:GVCCatalog/GVCCatalog.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:GVCFoundation/GVCFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GVCUIKit/GVCUIKit.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GVCFoundation/GVCFoundation.h>
+#import <GVCUIKit/GVCUIKit.h>
 
-@interface GVCAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface GVCAppDelegate : GVCUIApplicationDelegate
 
 @end
