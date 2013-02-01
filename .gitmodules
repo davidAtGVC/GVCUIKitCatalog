@@ -1,0 +1,6 @@
+[submodule "Code/GVCFoundation"]
+	path = Code/GVCFoundation
+	url = git://github.com/davidAtGVC/GVCFoundation.git
+[submodule "Code/GVCUIKit"]
+	path = Code/GVCUIKit
+	url = git://github.com/davidAtGVC/GVCUIKit.git
