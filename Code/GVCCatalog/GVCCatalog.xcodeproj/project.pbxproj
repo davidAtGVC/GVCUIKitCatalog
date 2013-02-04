@@ -35,6 +35,9 @@
 		0561052516BC17B600A3A5F4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0561052116BC17B600A3A5F4 /* CoreText.framework */; };
 		0561052616BC17B600A3A5F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0561052216BC17B600A3A5F4 /* QuartzCore.framework */; };
 		0561052716BC17B600A3A5F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0561052316BC17B600A3A5F4 /* Security.framework */; };
+		0583CBB516BC1E0400D70E11 /* appearance.json in Resources */ = {isa = PBXBuildFile; fileRef = 0583CBB416BC1E0400D70E11 /* appearance.json */; };
+		0583CBD716BC23AB00D70E11 /* TokenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0583CBD616BC23AB00D70E11 /* TokenViewController.m */; };
+		0583CBE516BC2E0700D70E11 /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0583CBE416BC2E0700D70E11 /* BadgeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +78,11 @@
 		0561052116BC17B600A3A5F4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		0561052216BC17B600A3A5F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0561052316BC17B600A3A5F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0583CBB416BC1E0400D70E11 /* appearance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appearance.json; sourceTree = "<group>"; };
+		0583CBD516BC23AB00D70E11 /* TokenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenViewController.h; sourceTree = "<group>"; };
+		0583CBD616BC23AB00D70E11 /* TokenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenViewController.m; sourceTree = "<group>"; };
+		0583CBE316BC2E0700D70E11 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		0583CBE416BC2E0700D70E11 /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,7 @@
 				0561050816BC15B900A3A5F4 /* GVCDetailViewController.m */,
 				0561050916BC15B900A3A5F4 /* GVCMasterViewController.h */,
 				0561050A16BC15B900A3A5F4 /* GVCMasterViewController.m */,
+				0583CBB816BC1EB700D70E11 /* Views */,
 			);
 			name = Classes;
 			path = GVCCatalog/Classes;
@@ -172,6 +181,7 @@
 		0561050E16BC15D100A3A5F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0583CBB416BC1E0400D70E11 /* appearance.json */,
 				0561051B16BC16D700A3A5F4 /* AppIcons */,
 				0561050F16BC160900A3A5F4 /* GVCDebug.xcconfig */,
 				0561051016BC160900A3A5F4 /* GVCRelease.xcconfig */,
@@ -200,6 +210,17 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		0583CBB816BC1EB700D70E11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0583CBD516BC23AB00D70E11 /* TokenViewController.h */,
+				0583CBD616BC23AB00D70E11 /* TokenViewController.m */,
+				0583CBE316BC2E0700D70E11 /* BadgeViewController.h */,
+				0583CBE416BC2E0700D70E11 /* BadgeViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056104CB16BC12BC00A3A5F4 /* Build configuration list for PBXNativeTarget "GVCCatalog" */;
 			buildPhases = (
+				0583CBB716BC1E2200D70E11 /* ShellScript */,
 				0561049D16BC12BC00A3A5F4 /* Sources */,
 				0561049E16BC12BC00A3A5F4 /* Frameworks */,
 				0561049F16BC12BC00A3A5F4 /* Resources */,
@@ -267,10 +289,27 @@
 				0561051516BC160900A3A5F4 /* Localizable.strings in Resources */,
 				0561051816BC168900A3A5F4 /* Icon-72.png in Resources */,
 				0561051A16BC16B900A3A5F4 /* Icon-144.png in Resources */,
+				0583CBB516BC1E0400D70E11 /* appearance.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0583CBB716BC1E2200D70E11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = Resources/Version.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0561049D16BC12BC00A3A5F4 /* Sources */ = {
@@ -281,6 +320,8 @@
 				0561050B16BC15B900A3A5F4 /* GVCAppDelegate.m in Sources */,
 				0561050C16BC15B900A3A5F4 /* GVCDetailViewController.m in Sources */,
 				0561050D16BC15B900A3A5F4 /* GVCMasterViewController.m in Sources */,
+				0583CBD716BC23AB00D70E11 /* TokenViewController.m in Sources */,
+				0583CBE516BC2E0700D70E11 /* BadgeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +460,7 @@
 				056104CD16BC12BC00A3A5F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

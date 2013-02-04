@@ -19,7 +19,8 @@
 
 - (void)setDetailItem:(id)newDetailItem
 {
-    if (_detailItem != newDetailItem) {
+    if (_detailItem != newDetailItem)
+	{
         _detailItem = newDetailItem;
         
         // Update the view.
@@ -31,13 +32,14 @@
     }        
 }
 
+- (NSString *)viewTitle
+{
+	return (([self detailItem] == nil) ? [super viewTitle] : [[self detailItem] valueForKey:GVCDictionaryTableViewController_label]);
+}
+
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [self.detailItem description];
-	}
+//	[[self navigationItem] setTitle:];
 }
 
 - (void)viewDidLoad
@@ -68,5 +70,13 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	GVCDetailViewController *nextViewController = [segue destinationViewController];
+	[nextViewController setDetailItem:sender];
+	
+}
+
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2524" systemVersion="12A217" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1863"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -17,9 +17,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="-630"/>
+            <point key="canvasLocation" x="-924" y="-1286"/>
         </scene>
-        <!--class Prefix:identifier Detail View Controller - Detail-->
+        <!--Detail View Controller - Detail-->
         <scene sceneID="16">
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="4" customClass="GVCDetailViewController" sceneMemberID="viewController">
@@ -27,11 +27,11 @@
                         <rect key="frame" x="0.0" y="64" width="703" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label translatesAutoresizingMaskIntoConstraints="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" lineBreakMode="tailTruncation" autoshrinkMode="none" minimumFontSize="10" text="Detail view content goes here" textAlignment="center" id="27">
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -46,11 +46,125 @@
                     <navigationItem key="navigationItem" title="Detail" id="53"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="27" id="29"/>
+                        <segue destination="fW8-bv-B2H" kind="push" identifier="token_view" id="TKh-Qy-IEE"/>
+                        <segue destination="2zC-gi-Z8f" kind="push" identifier="badge_view" id="nFP-CM-FB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="248"/>
+            <point key="canvasLocation" x="-636" y="168"/>
+        </scene>
+        <!--Token View Controller-->
+        <scene sceneID="uow-3q-MZi">
+            <objects>
+                <viewController id="fW8-bv-B2H" customClass="TokenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W6o-Jf-uEY">
+                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlC-c3-38q" customClass="GVCTokenView">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-F1-JyN" customClass="GVCTokenView">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sY5-sl-cXa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="1dV-p2-MqN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="updateBadgeText:" destination="qlC-c3-38q" eventType="editingDidEnd" id="rEv-vy-AGy"/>
+                                </connections>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-pN-Zzz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="iXB-eW-WeA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="updateBadgeText:" destination="xnA-F1-JyN" eventType="valueChanged" id="5iv-rv-IYt"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sY5-sl-cXa" firstAttribute="top" secondItem="W6o-Jf-uEY" secondAttribute="top" constant="30" id="7tl-wF-Rxe"/>
+                            <constraint firstItem="sY5-sl-cXa" firstAttribute="leading" secondItem="W6o-Jf-uEY" secondAttribute="leading" constant="32" id="EDP-GN-z8p"/>
+                            <constraint firstItem="xnA-F1-JyN" firstAttribute="top" secondItem="W6o-Jf-uEY" secondAttribute="top" constant="88" id="IH6-Am-JoP"/>
+                            <constraint firstAttribute="bottom" secondItem="xnA-F1-JyN" secondAttribute="bottom" constant="567" id="JtN-ZA-Qql"/>
+                            <constraint firstItem="xnA-F1-JyN" firstAttribute="trailing" secondItem="qlC-c3-38q" secondAttribute="trailing" type="default" id="StY-WC-0HV"/>
+                            <constraint firstAttribute="bottom" secondItem="qlC-c3-38q" secondAttribute="bottom" constant="635" id="TTh-7M-f5c"/>
+                            <constraint firstItem="W5U-pN-Zzz" firstAttribute="leading" secondItem="sY5-sl-cXa" secondAttribute="leading" type="default" id="gtW-C7-Qe8"/>
+                            <constraint firstAttribute="trailing" secondItem="qlC-c3-38q" secondAttribute="trailing" constant="33" id="hqj-6p-CRA"/>
+                            <constraint firstItem="qlC-c3-38q" firstAttribute="leading" secondItem="xnA-F1-JyN" secondAttribute="leading" type="default" id="jpx-Kc-aoy"/>
+                            <constraint firstItem="qlC-c3-38q" firstAttribute="leading" secondItem="W6o-Jf-uEY" secondAttribute="leading" constant="373" id="m7n-xF-vVX"/>
+                            <constraint firstItem="W5U-pN-Zzz" firstAttribute="top" secondItem="W6o-Jf-uEY" secondAttribute="top" constant="103" id="nfD-oU-v70"/>
+                            <constraint firstItem="qlC-c3-38q" firstAttribute="top" secondItem="W6o-Jf-uEY" secondAttribute="top" constant="20" symbolic="YES" type="default" id="x4N-YO-tmg"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wVC-kS-AjG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJL-sT-mLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="-571"/>
+        </scene>
+        <!--Badge View Controller-->
+        <scene sceneID="Mrs-ax-2Ih">
+            <objects>
+                <viewController id="2zC-gi-Z8f" customClass="BadgeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9bA-rv-5U6">
+                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-yt-c08" customClass="GVCBadgeView">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLC-Vw-oGP" customClass="GVCBadgeView">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-LZ-AsS">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="Ptd-67-nZB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="updateBadgeText:" destination="Lk6-yt-c08" eventType="editingDidEnd" id="fCq-9C-TP0"/>
+                                </connections>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mJp-Xm-bmW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="ZtT-dX-kIH"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="updateBadgeText:" destination="bLC-Vw-oGP" eventType="valueChanged" id="9Sc-hg-hfx"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mJp-Xm-bmW" firstAttribute="top" secondItem="9bA-rv-5U6" secondAttribute="top" constant="142" id="GZD-G7-8oG"/>
+                            <constraint firstAttribute="bottom" secondItem="bLC-Vw-oGP" secondAttribute="bottom" constant="527" id="HAc-9r-GhB"/>
+                            <constraint firstAttribute="trailing" secondItem="Lk6-yt-c08" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PIV-ib-5Zp"/>
+                            <constraint firstItem="Jat-LZ-AsS" firstAttribute="leading" secondItem="9bA-rv-5U6" secondAttribute="leading" constant="45" id="UQq-Nt-YN5"/>
+                            <constraint firstItem="Lk6-yt-c08" firstAttribute="top" secondItem="9bA-rv-5U6" secondAttribute="top" constant="60" id="XHH-V0-ygJ"/>
+                            <constraint firstItem="mJp-Xm-bmW" firstAttribute="leading" secondItem="Jat-LZ-AsS" secondAttribute="leading" type="default" id="YjE-LX-hGK"/>
+                            <constraint firstItem="Jat-LZ-AsS" firstAttribute="top" secondItem="9bA-rv-5U6" secondAttribute="top" constant="70" id="Z2x-kr-Rb5"/>
+                            <constraint firstItem="Lk6-yt-c08" firstAttribute="leading" secondItem="9bA-rv-5U6" secondAttribute="leading" constant="386" id="dlg-dc-lXw"/>
+                            <constraint firstItem="bLC-Vw-oGP" firstAttribute="top" secondItem="9bA-rv-5U6" secondAttribute="top" constant="128" id="fVq-oh-UpX"/>
+                            <constraint firstAttribute="bottom" secondItem="Lk6-yt-c08" secondAttribute="bottom" constant="595" id="guC-nD-PAu"/>
+                            <constraint firstItem="bLC-Vw-oGP" firstAttribute="leading" secondItem="Lk6-yt-c08" secondAttribute="leading" type="default" id="hD6-a2-Deu"/>
+                            <constraint firstAttribute="trailing" secondItem="bLC-Vw-oGP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nwF-WX-cSj"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZC9-Ao-7uW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65D-TD-Uv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="585"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
@@ -66,31 +180,31 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687" y="-630"/>
+            <point key="canvasLocation" x="-2682" y="-1266"/>
         </scene>
-        <!--class Prefix:identifier Master View Controller - Master-->
+        <!--Master View Controller - Master-->
         <scene sceneID="24">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" clearsSelectionOnViewWillAppear="NO" id="19" customClass="GVCMasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="20">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="20">
                         <rect key="frame" x="0.0" y="64" width="320" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="tIi-5l-S0i" style="IBUITableViewCellStyleDefault" id="ZSw-0O-9Pw">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="34" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" lineBreakMode="tailTruncation" autoshrinkMode="none" baselineAdjustment="alignBaselines" text="Title" adjustsFontSizeToFit="NO" id="tIi-5l-S0i">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tIi-5l-S0i">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -108,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="-631"/>
+            <point key="canvasLocation" x="-293" y="-1299"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="50">
@@ -123,9 +237,61 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-366" y="248"/>
+            <point key="canvasLocation" x="-1670" y="160"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BadgeViewController" superclassName="GVCDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BadgeViewController.h"/>
+        </class>
+        <class className="GVCBadgeView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCBadgeView.h"/>
+            <relationships>
+                <relationship kind="action" name="updateBadgeText:"/>
+            </relationships>
+        </class>
+        <class className="GVCDetailViewController" superclassName="GVCUIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GVCDictionaryTableViewController" superclassName="GVCUITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCDictionaryTableViewController.h"/>
+        </class>
+        <class className="GVCMasterViewController" superclassName="GVCDictionaryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCMasterViewController.h"/>
+        </class>
+        <class className="GVCTokenView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCTokenView.h"/>
+            <relationships>
+                <relationship kind="action" name="updateBadgeText:"/>
+            </relationships>
+        </class>
+        <class className="GVCUITableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCUITableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="reload:"/>
+                <relationship kind="outlet" name="callbackDelegate"/>
+                <relationship kind="outlet" name="cellTemplate" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="tableFooterView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="tableHeaderView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GVCUIViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GVCUIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissModalViewController:"/>
+                <relationship kind="outlet" name="callbackDelegate"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TokenViewController" superclassName="GVCDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TokenViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

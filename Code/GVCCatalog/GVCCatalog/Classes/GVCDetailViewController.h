@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GVCFoundation/GVCFoundation.h>
+#import <GVCUIKit/GVCUIKit.h>
 
-@interface GVCDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface GVCDetailViewController : GVCUIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 

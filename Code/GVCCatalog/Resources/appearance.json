@@ -1,0 +1,34 @@
+{
+	"UINavigationBar": {
+		"tintColor": "#3A789B"
+	},
+	"UITabBar": {
+        "tintColor": "#063253",
+        "selectedImageTintColor": "yellow"
+    },
+    "GVCRoundBorderView": {
+        "contentColor": "white",
+		"borderColor" : "black",
+		"borderWidth" : 12,
+		"UILabel" : {
+			"textColor" : "blue",
+			"font" : ["Helvetica", 14.0]
+		},
+		"UITableView" : {
+		}
+    },
+	"GVCBadgeView" : {
+		"badgeColor" : "red",
+		"textFont" : ["Helvetica", 15.0]
+	},
+	"GVCTokenView" : {
+        "backgroundColor": "#3A789B",
+		"borderColor" : "white"
+	},
+	"BadgeViewController" : {
+		"GVCBadgeView" : {
+			"badgeColor" : "blue",
+			"textFont" : ["Helvetica", 17.0]
+		},
+	}
+}

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GVCFoundation/GVCFoundation.h>
+#import <GVCUIKit/GVCUIKit.h>
 
 @class GVCDetailViewController;
 
-@interface GVCMasterViewController : UITableViewController
+@interface GVCMasterViewController : GVCDictionaryTableViewController
 
 @property (strong, nonatomic) GVCDetailViewController *detailViewController;
 
